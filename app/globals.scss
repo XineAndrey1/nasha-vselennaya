@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: var(--font-great-vibes), cursive;
+    background: #fff5f7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Кастомный скроллбар
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f8a5b8;
+    border-radius: 10px;
+}
+
+// Убираем подсветку при нажатии на iPhone
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+// Плавные переходы
+* {
+    transition: all 0.3s ease;
+}

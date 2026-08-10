@@ -1,0 +1,151 @@
+
+.main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff5f7 0%, #ffe8ee 100%);
+}
+
+.header {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  width: 90%;
+  max-width: 400px;
+
+  .titleWrapper {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 16px 28px;
+    box-shadow: 
+      0 4px 30px rgba(255, 107, 157, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 107, 157, 0.08);
+  }
+
+  h1 {
+    font-family: var(--font-great-vibes), cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff6b9d, #ff8a9e, #ff6b9d);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .subtitle {
+    font-family: var(--font-great-vibes), cursive;
+    font-size: 1.1rem;
+    color: #ff8a9e;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+    -webkit-text-fill-color: #ff8a9e;
+    opacity: 0.9;
+  }
+
+  .hint {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #ff6b9d;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 6px 18px;
+    border-radius: 30px;
+    display: inline-block;
+    border: 1px solid rgba(255, 107, 157, 0.06);
+    font-family: var(--font-great-vibes), cursive;
+  }
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe8ee 100%);
+
+  p {
+    font-family: var(--font-great-vibes), cursive;
+    margin-bottom: 24px;
+    font-size: 1.2rem;
+    color: #ff6b9d;
+  }
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(255, 107, 157, 0.12);
+  border-top: 3px solid #ff6b9d;
+  border-radius: 50%;
+  animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Адаптив для iPhone 16 Pro (393px ширина)
+@media (max-width: 430px) {
+  .header {
+    top: 40px;
+
+    .titleWrapper {
+      padding: 14px 22px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+    }
+
+    .hint {
+      font-size: 0.75rem;
+      padding: 5px 14px;
+    }
+  }
+}
+
+@media (max-width: 393px) {
+  .header {
+    top: 30px;
+
+    .titleWrapper {
+      padding: 12px 18px;
+      border-radius: 20px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+    }
+  }
+}
